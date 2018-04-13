@@ -51,7 +51,7 @@
 #endif
 
 // Identifier for the chat network messages
-const int MSG_CHAT = 32;
+const int MSG_CHAT = 153;
 // UDP port we will use
 const unsigned short CHAT_SERVER_PORT = 2345;
 
@@ -113,7 +113,7 @@ void Chat::CreateUI()
     int rowHeight = chatHistoryText_->GetRowHeight();
     // Row height would be zero if the font failed to load
     if (rowHeight)
-        chatHistory_.Resize((graphics->GetHeight() - 20) / rowHeight);
+        chatHistory_.Resize((graphics->GetHeight() - 100) / rowHeight);
 
     // No viewports or scene is defined. However, the default zone's fog color controls the fill color
     GetSubsystem<Renderer>()->GetDefaultZone()->SetFogColor(Color(0.0f, 0.0f, 0.1f));
