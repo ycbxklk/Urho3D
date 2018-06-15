@@ -1003,7 +1003,7 @@ float Connection::GetRoundTripTime() const
 {
     if (peer_)
     {
-        SLNet::RakNetStatistics stats;
+        SLNet::RakNetStatistics stats{};
         if (peer_->GetStatistics(address_->systemAddress, &stats))
             return (float)peer_->GetAveragePing(*address_);
     }
@@ -1020,7 +1020,7 @@ float Connection::GetBytesInPerSec() const
 {
     if (peer_)
     {
-        SLNet::RakNetStatistics stats;
+        SLNet::RakNetStatistics stats{};
         if (peer_->GetStatistics(address_->systemAddress, &stats))
             return (float)stats.valueOverLastSecond[SLNet::ACTUAL_BYTES_RECEIVED];
     }
@@ -1031,7 +1031,7 @@ float Connection::GetBytesOutPerSec() const
 {
     if (peer_)
     {
-        SLNet::RakNetStatistics stats;
+        SLNet::RakNetStatistics stats{};
         if (peer_->GetStatistics(address_->systemAddress, &stats))
             return (float)stats.valueOverLastSecond[SLNet::ACTUAL_BYTES_SENT];
     }
